@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[show]
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.order(created_at: :desc)
   end
 
   def show; end
